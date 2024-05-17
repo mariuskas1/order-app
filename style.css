@@ -1,0 +1,160 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: rgb(255, 136, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.header-logo{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+h3{
+    color: white;
+    text-decoration: underline;
+}
+
+.header-icon{
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+}
+
+main{
+    display: flex;
+}
+
+.card{
+    width: 70%;
+}
+
+.card-header{
+    background-image: url("./img/3.jpg");
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
+    position: relative;
+}
+
+.resto-logo{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 250px;
+    transform: translateX(-50%);
+}
+
+.rating-star{
+    height: 16px;
+    width: 16px;
+}
+
+.resto-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding: 24px;
+}
+
+.resto-name{
+    font-size: 32px;
+    font-weight: 800;
+    
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+}
+
+.rating-text{
+    font-size: 14px;
+    color:rgb(255, 136, 0);
+}
+
+.resto-buttons{
+    display: flex;
+}
+
+.resto-btn-div{
+    border: 1px solid lightgray;
+    padding: 8px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resto-btn{
+    height: 24px;
+    width: 24px;
+}
+
+.menu-bar{
+    display: flex;
+    background-color: beige;
+    justify-content: space-around;
+    padding: 16px;
+}
+
+.menu-bar-icon{
+    height: 16px;
+    width: 16px;
+}
+
+.meals{
+    margin: 24px;
+}
+
+.meals-header{
+    background-color: beige;
+    padding: 5px;
+    margin-bottom: 16px;
+    padding-left: 16px;
+}
+
+.meal{
+    border: 1px solid lightgrey;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.plus-btn{
+    height: 24px;
+    width: 24px;
+}
+
+.item-btn{
+    border: 1px solid lightgray;
+    padding: 4px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-btn:hover{
+    cursor: pointer;
+}
+
+#active{
+    color: rgb(255, 136, 0)
+}
