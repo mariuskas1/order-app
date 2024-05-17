@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieferando</title>
+    <link rel="icon" type="image/svg" href="img/icons/burger-solid.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img class="header-icon" src="./img/icons/house-solid.svg">
+            <h2>Lieferando.de</h2>
+        </div>
+        <h3>Lilienstraße 3, Leipzig</h3>
+        <img class="header-icon" src="./img/icons/bars-solid.svg">
+    </header>
+    
+<main>
+    <div class="card">
+        <div class="card-header">
+            <img class="resto-logo" src="./img/1.jpg">
+        </div>
+        <div class="resto-info">
+            <div class="resto-name">
+                <span class="resto-name">Croccante Restaurant</span> 
+                <div class="rating">
+                    <img class="rating-star" src="./img/icons/star-solid.svg">
+                    <img class="rating-star" src="./img/icons/star-solid.svg">
+                    <img class="rating-star" src="./img/icons/star-solid.svg">
+                    <img class="rating-star" src="./img/icons/star-solid.svg">
+                    <img class="rating-star" src="./img/icons/star-half-stroke-regular.svg">
+                    <span class="rating-text">(518 Bewertungen)</span>      
+                </div>
+            </div>
+            <div class="resto-buttons">
+                <div class="resto-btn-div"><img class="resto-btn" src="./img/icons/info-solid.svg"></div>
+                <div class="resto-btn-div"><img class="resto-btn" src="./img/icons/heart-regular.svg"></div>                
+            </div>
+        </div>
+        <div class="menu-bar">
+            <img class="menu-bar-icon" src="./img/icons/magnifying-glass-solid.svg">
+            <span class="menu-bar-text" id="active">Beliebte Gerichte</span>
+            <span class="menu-bar-text">Salate</span>
+            <span class="menu-bar-text">Pizza</span>
+            <span class="menu-bar-text">Pizzabrot</span>
+            <span class="menu-bar-text">Pasta</span>
+            <span class="menu-bar-text">Al Fonto</span>
+            <span class="menu-bar-text">Aufläufe</span>
+            <span class="menu-bar-text">Puten-Schnitzel</span>
+            <img class="menu-bar-icon" src="./img/icons/angle-right-solid.svg">
+        </div>
+
+        <div class="meals">
+            <div class="meals-header">
+                <h2 >Beliebte Gerichte</h2>
+            </div>
+            <div class="meal">
+                <div class="item-info">
+                    <h2>Cheeseburger</h2>
+                    <span>Produktinfo</span>
+                </div>
+                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+            </div>
+            <div class="meal">
+                <div class="item-info">
+                    <h2>Pizza Salami</h2>
+                    <span>Produktinfo</span>
+                </div>
+                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+            </div>
+            <div class="meal">
+                <div class="item-info">
+                    <h2>Pizza Margherita</h2>
+                    <span>Produktinfo</span>
+                </div>
+                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+            </div>
+            <div class="meal">
+                <div class="item-info">
+                    <h2>Lasagne</h2>
+                    <span>Produktinfo</span>
+                </div>
+                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+            </div>
+            <div class="meal">
+                <div class="item-info">
+                    <h2>Pommes frites</h2>
+                    <span>Produktinfo</span>
+                </div>
+                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="basket"></div>
+    <h4>Warenkorb</h4>
+    <div class="basket-items">
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="basket-price"></div>
+
+</main>
+
+</body>
+</html>
