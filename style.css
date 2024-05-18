@@ -50,7 +50,6 @@ main{
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 1px solid lightgray;
     position: absolute;
     left: 50%;
     top: 250px;
