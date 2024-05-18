@@ -6,6 +6,7 @@
     <title>Lieferando</title>
     <link rel="icon" type="image/svg" href="img/icons/burger-solid.svg">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -61,35 +62,35 @@
                     <h2>Cheeseburger</h2>
                     <span>Produktinfo</span>
                 </div>
-                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+                <div class="item-btn" onclick="addToBasket('Cheeseburger', 5.60)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
             </div>
             <div class="meal">
                 <div class="item-info">
                     <h2>Pizza Salami</h2>
                     <span>Produktinfo</span>
                 </div>
-                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+                <div class="item-btn" onclick="addToBasket('Pizza Salami', 7.50)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
             </div>
             <div class="meal">
                 <div class="item-info">
                     <h2>Pizza Margherita</h2>
                     <span>Produktinfo</span>
                 </div>
-                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+                <div class="item-btn" onclick="addToBasket('Pizza Margherita', 7.00)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
             </div>
             <div class="meal">
                 <div class="item-info">
                     <h2>Lasagne</h2>
                     <span>Produktinfo</span>
                 </div>
-                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+                <div class="item-btn" onclick="addToBasket('Lasagne', 8.00)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
             </div>
             <div class="meal">
                 <div class="item-info">
                     <h2>Pommes frites</h2>
                     <span>Produktinfo</span>
                 </div>
-                <div class="item-btn" onclick="addToBasket(item)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+                <div class="item-btn" onclick="addToBasket('Pommes frites', 4.00)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
             </div>
 
         </div>
@@ -99,36 +100,14 @@
 
     <div class="basket">
         <div class="basket-header"><h4>Warenkorb</h4></div> 
-        <div class="basket-items">
-            <div class="item">
-                <span class="amount">1x</span>
-                <span class="item-name">Cheeseburger</span>
-                <div>
-                    <img class="item-icon amount-change" src="./img/icons/minus-solid.svg">
-                    <img class="item-icon amount-change" src="./img/icons/plus-solid (1).svg">
-                </div>
-                <span class="price">5.60</span>
-                <img class="item-icon" src="./img/icons/trash-solid.svg">
-
-            </div>
-            <div class="item">
-                <span class="amount">1x</span>
-                <span class="item-name">Cheeseburger</span>
-                <div>
-                    <img class="item-icon amount-change" src="./img/icons/minus-solid.svg">
-                    <img class="item-icon amount-change" src="./img/icons/plus-solid (1).svg">
-                </div>
-                <span class="price">5.60</span>
-                <img class="item-icon" src="./img/icons/trash-solid.svg">
-
-            </div>
-            
+        <div class="basket-items" id="basket">
         </div>
+
         <div class="basket-price">
             <table>
                 <tr>
                     <td>Zwischensumme</td>
-                    <td>5.60</td>
+                    <td id="sum">5.60</td>
                 </tr>
                 <tr>
                     <td>Lieferkosten</td>
@@ -136,7 +115,7 @@
                 </tr>
                 <tr id="complete">
                     <td>Gesamt</td>
-                    <td>6.60</td>
+                    <td id="finalSum">6.60</td>
                 </tr>
             </table>
         </div>
