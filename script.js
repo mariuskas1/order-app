@@ -2,6 +2,22 @@ let names = [];
 let prices = [];
 let amounts = [];
 
+
+function displayEmptyBasket(){
+  let basket = document.getElementById("basket");
+  let priceDisplay = document.getElementById("price-table");
+
+  basket.innerHTML= `
+        <div class="empty-basket">
+          <img class="empty-basket-icon" src="./img/icons/basket-shopping-solid.svg">
+          <span class="empty-header">Fülle deinen Warenkorb</span>
+          <span id="empty-text">"Füge leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen"</span>
+        </div>
+    `;
+   priceDisplay.style.display = 'none';
+}
+
+
 function addToBasket(name, price, amount) {
   let index = names.indexOf(name);
   if (index == -1) {
@@ -19,26 +35,39 @@ function addToBasket(name, price, amount) {
 
 function displayShoppingBasket() {
   let basket = document.getElementById("basket");
+  let priceDisplay = document.getElementById("price-table");
+
   basket.innerHTML = "";
 
-  for (let i = 0; i < names.length; i++) {
-    const name = names[i];
-    const price = prices[i];
-    const amount = amounts[i];
+  if(names.length == 0){
+    displayEmptyBasket();
+  } else {
+    priceDisplay.style.display = 'block';
+      for (let i = 0; i < names.length; i++) {
+        const name = names[i];
+        const price = prices[i];
+        const amount = amounts[i];
+        
+        renderFilledBasket(name, price, amount);
+      }
+  }  
+}
 
-    basket.innerHTML += `
-        <div class="item">
-            <span class="amount">${amount}x</span>
-            <span class="item-name">${name}</span>
-            <div>
-                <img class="item-icon amount-change" src="./img/icons/minus-solid.svg">
-                <img class="item-icon amount-change" src="./img/icons/plus-solid (1).svg">
+
+function renderFilledBasket(name, price, amount){
+  let basket = document.getElementById("basket");
+  basket.innerHTML += `
+            <div class="item">
+                <span class="amount">${amount}x</span>
+                <span class="item-name">${name}</span>
+                <div>
+                    <img class="item-icon amount-change" src="./img/icons/minus-solid.svg">
+                    <img class="item-icon amount-change" src="./img/icons/plus-solid (1).svg">
+                </div>
+                <span class="price">${price.toFixed(2)}</span>
+                <img class="item-icon" src="./img/icons/trash-solid.svg">
             </div>
-            <span class="price">${price}</span>
-            <img class="item-icon" src="./img/icons/trash-solid.svg">
-        </div>
-    `;
-  }
+        `;
 }
 
 
@@ -51,8 +80,8 @@ function updateShoppingSum() {
 
   let finalSum = sum + 1;
 
-  document.getElementById("sum").innerHTML = sum;
-  document.getElementById("finalSum").innerHTML = finalSum;
+  document.getElementById("sum").innerHTML = sum.toFixed(2);
+  document.getElementById("finalSum").innerHTML = finalSum.toFixed(2);
 }
 
 
