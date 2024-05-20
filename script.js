@@ -48,24 +48,30 @@ function displayShoppingBasket() {
         const price = prices[i];
         const amount = amounts[i];
         
-        renderFilledBasket(name, price, amount);
+        renderFilledBasket(name, price, amount, i);
       }
   }  
 }
 
 
-function renderFilledBasket(name, price, amount){
+function renderFilledBasket(name, price, amount, i ){
   let basket = document.getElementById("basket");
+  let calculatedPrice = price * amount;
+
   basket.innerHTML += `
             <div class="item">
+              <div class="item-first-part">
                 <span class="amount">${amount}x</span>
                 <span class="item-name">${name}</span>
+              </div>
+              <div class="item-second-part">
                 <div>
-                    <img class="item-icon amount-change" src="./img/icons/minus-solid.svg">
-                    <img class="item-icon amount-change" src="./img/icons/plus-solid (1).svg">
+                    <img class="item-icon amount-change" src="./img/icons/minus-solid.svg" onclick="decreaseAmount(${i})">
+                    <img class="item-icon amount-change" src="./img/icons/plus-solid (1).svg" onclick="increaseAmount(${i})">
                 </div>
-                <span class="price">${price.toFixed(2)}</span>
-                <img class="item-icon" src="./img/icons/trash-solid.svg">
+                <span class="price">${calculatedPrice.toFixed(2)}</span>
+                <img class="item-icon delete-btn" src="./img/icons/trash-solid.svg" onclick="removeItem(${i})">
+              </div>
             </div>
         `;
 }
@@ -94,3 +100,51 @@ window.onscroll = function () {
     shoppingCart.style = "top: 100px";
   }
 };
+
+
+function removeItem(i){
+  names.splice(i, 1);
+  prices.splice(i, 1);
+  amounts.splice(i, 1);
+
+  document.getElementById("basket").innerHTML = '';
+  displayShoppingBasket();
+  updateShoppingSum();
+}
+
+function decreaseAmount(i){
+  let currentAmount = amounts[i];
+  if(currentAmount == 1){
+    removeItem(i)
+  } else {
+    currentAmount--;
+    amounts[i] = currentAmount;
+
+    document.getElementById("basket").innerHTML = '';
+    displayShoppingBasket();
+    updateShoppingSum();
+  }
+}
+
+function increaseAmount(i){
+  let currentAmount = amounts[i];
+  currentAmount++;
+  amounts[i] = currentAmount;
+
+  document.getElementById("basket").innerHTML = '';
+  displayShoppingBasket();
+  updateShoppingSum();
+}
+
+function order(){
+  if (amounts.length == 0) {
+    alert('Dein Warenkorb ist leer');
+  } else {
+    alert('Vielen Dank für deine Bestellung');
+    names = [];
+    prices = [];
+    amounts = [];
+    displayEmptyBasket();
+  }
+}
+
