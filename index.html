@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
+<body onload="displayEmptyBasket()">
     <header>
         <div class="header-logo">
             <img class="header-icon" src="./img/icons/house-solid.svg">
@@ -103,11 +103,11 @@
         <div class="basket-items" id="basket">
         </div>
 
-        <div class="basket-price">
+        <div class="basket-price" id="price-table">
             <table>
                 <tr>
                     <td>Zwischensumme</td>
-                    <td id="sum">5.60</td>
+                    <td id="sum">0.00</td>
                 </tr>
                 <tr>
                     <td>Lieferkosten</td>
@@ -115,12 +115,12 @@
                 </tr>
                 <tr id="complete">
                     <td>Gesamt</td>
-                    <td id="finalSum">6.60</td>
+                    <td id="finalSum">1.00</td>
                 </tr>
             </table>
         </div>
 
-        <button class="order-btn">Bestellen</button>
+        <button class="order-btn" id="order-btn" disabled>Bestellen</button>
 
     </div>
    
