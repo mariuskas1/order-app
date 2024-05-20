@@ -56,6 +56,16 @@ main{
     transform: translateX(-50%);
 }
 
+@media(max-width: 1290px){
+    .resto-logo{
+        position: initial;
+        left: initial;
+        top: initial;
+        transform: initial;
+
+    }
+}
+
 .rating-star{
     height: 16px;
     width: 16px;
@@ -77,7 +87,13 @@ main{
 
 .rating{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+}
+
+.rating-stars{
+    display: flex;
+    margin-right: 8px;
 }
 
 .rating-text{
@@ -88,6 +104,8 @@ main{
 .resto-buttons{
     display: flex;
 }
+
+
 
 .resto-btn-div{
     border: 1px solid lightgray;
@@ -109,11 +127,23 @@ main{
     background-color: beige;
     justify-content: space-around;
     padding: 16px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .menu-bar-icon{
     height: 16px;
     width: 16px;
+    flex: 0 0 auto;
+    
+}
+
+.menu-bar-text{
+    flex: 1 1 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .meals{
@@ -286,4 +316,74 @@ td{
     text-align: center;
     width: 240px;
     margin-bottom: 16px;
+}
+
+@media(max-width: 1200px){
+    #text-one{
+        display: none;
+    }
+    .card{
+        width: 60%;
+    }
+    .basket{
+        width: 40%;
+    }
+}
+
+@media(max-width: 1150px){
+    #text-two{
+        display: none;
+    }
+}
+
+@media(max-width: 1100px){
+    #text-three{
+        display: none;
+    }
+}
+
+@media(max-width: 600px) {
+    #address{
+        display: none;
+    }
+}
+
+@media(max-width: 500px){
+    #text-four{
+        display: none;
+    }
+    .resto-buttons{
+        display: none;
+    }
+}
+
+@media(max-width: 450px){
+    #text-five{
+        display: none;
+    }
+}
+@media(max-width: 350px){
+    #text-six{
+        display: none;
+    }
+}
+
+
+
+
+@media(max-width: 800px){
+    main{
+        flex-direction: column;
+    }
+    .card{
+        width: 100%;
+    }
+    .basket{
+        width: 100%;
+        position: initial;
+        right: initial;
+        top: initial;
+        transition: all 100ms ease;
+        min-height: initial;
+    }
 }

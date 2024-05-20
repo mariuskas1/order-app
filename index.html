@@ -14,7 +14,7 @@
             <img class="header-icon" src="./img/icons/house-solid.svg">
             <h2>Lieferando.de</h2>
         </div>
-        <h3>Lilienstraße 3, Leipzig</h3>
+        <h3 id="address">Lilienstraße 3, Leipzig</h3>
         <img class="header-icon" src="./img/icons/bars-solid.svg">
     </header>
     
@@ -27,11 +27,13 @@
             <div class="resto-name">
                 <span class="resto-name">Croccante Restaurant</span> 
                 <div class="rating">
-                    <img class="rating-star" src="./img/icons/star-solid.svg">
-                    <img class="rating-star" src="./img/icons/star-solid.svg">
-                    <img class="rating-star" src="./img/icons/star-solid.svg">
-                    <img class="rating-star" src="./img/icons/star-solid.svg">
-                    <img class="rating-star" src="./img/icons/star-half-stroke-regular.svg">
+                    <div class="rating-stars">
+                        <img class="rating-star" src="./img/icons/star-solid.svg">
+                        <img class="rating-star" src="./img/icons/star-solid.svg">
+                        <img class="rating-star" src="./img/icons/star-solid.svg">
+                        <img class="rating-star" src="./img/icons/star-solid.svg">
+                        <img class="rating-star" src="./img/icons/star-half-stroke-regular.svg">
+                    </div>
                     <span class="rating-text">(518 Bewertungen)</span>      
                 </div>
             </div>
@@ -43,13 +45,13 @@
         <div class="menu-bar">
             <img class="menu-bar-icon" src="./img/icons/magnifying-glass-solid.svg">
             <span class="menu-bar-text" id="active">Beliebte Gerichte</span>
-            <span class="menu-bar-text">Salate</span>
-            <span class="menu-bar-text">Pizza</span>
-            <span class="menu-bar-text">Pizzabrot</span>
-            <span class="menu-bar-text">Pasta</span>
-            <span class="menu-bar-text">Al Fonto</span>
-            <span class="menu-bar-text">Aufläufe</span>
-            <span class="menu-bar-text">Puten-Schnitzel</span>
+            <span class="menu-bar-text" id="text-seven">Salate</span>
+            <span class="menu-bar-text" id="text-six">Pizza</span>
+            <span class="menu-bar-text" id="text-five">Pizzabrot</span>
+            <span class="menu-bar-text" id="text-four">Pasta</span>
+            <span class="menu-bar-text" id="text-three">Al Fonto</span>
+            <span class="menu-bar-text" id="text-two">Aufläufe</span>
+            <span class="menu-bar-text" id="text-one" >Puten-Schnitzel</span>
             <img class="menu-bar-icon" src="./img/icons/angle-right-solid.svg">
         </div>
 
@@ -73,10 +75,10 @@
             </div>
             <div class="meal">
                 <div class="item-info">
-                    <h2>Pizza Margherita</h2>
+                    <h2>Burger</h2>
                     <span>Produktinfo</span>
                 </div>
-                <div class="item-btn" onclick="addToBasket('Pizza Margherita', 7.00, 1)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
+                <div class="item-btn" onclick="addToBasket('Burger', 5.00, 1)"><img class="plus-btn" src="./img/icons/plus-solid.svg" ></div>
             </div>
             <div class="meal">
                 <div class="item-info">
