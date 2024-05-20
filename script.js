@@ -36,9 +36,7 @@ function addToBasket(name, price, amount) {
 function displayShoppingBasket() {
   let basket = document.getElementById("basket");
   let priceDisplay = document.getElementById("price-table");
-
   basket.innerHTML = "";
-
   if(names.length == 0){
     displayEmptyBasket();
   } else {
@@ -47,17 +45,15 @@ function displayShoppingBasket() {
         const name = names[i];
         const price = prices[i];
         const amount = amounts[i];
-        
         renderFilledBasket(name, price, amount, i);
       }
   }  
 }
 
 
-function renderFilledBasket(name, price, amount, i ){
+function renderFilledBasket(name, price, amount, i){
   let basket = document.getElementById("basket");
   let calculatedPrice = price * amount;
-
   basket.innerHTML += `
             <div class="item">
               <div class="item-first-part">
@@ -79,27 +75,13 @@ function renderFilledBasket(name, price, amount, i ){
 
 function updateShoppingSum() {
   let sum = 0;
-
   for (let i = 0; i < prices.length; i++) {
     sum += prices[i] * amounts[i];
   }
-
   let finalSum = sum + 1;
-
   document.getElementById("sum").innerHTML = sum.toFixed(2);
   document.getElementById("finalSum").innerHTML = finalSum.toFixed(2);
 }
-
-
-window.onscroll = function () {
-  let shoppingCart = document.getElementById("shoppingCart");
-
-  if (window.scrollY > 0) {
-    shoppingCart.style = "top: 0";
-  } else {
-    shoppingCart.style = "top: 100px";
-  }
-};
 
 
 function removeItem(i){
@@ -111,6 +93,7 @@ function removeItem(i){
   displayShoppingBasket();
   updateShoppingSum();
 }
+
 
 function decreaseAmount(i){
   let currentAmount = amounts[i];
@@ -126,6 +109,7 @@ function decreaseAmount(i){
   }
 }
 
+
 function increaseAmount(i){
   let currentAmount = amounts[i];
   currentAmount++;
@@ -135,6 +119,7 @@ function increaseAmount(i){
   displayShoppingBasket();
   updateShoppingSum();
 }
+
 
 function order(){
   if (amounts.length == 0) {
@@ -148,3 +133,17 @@ function order(){
   }
 }
 
+function showBasket(){
+  let hiddenBasket = document.getElementById('shoppingCart');
+  let closeBtn = document.getElementById('closeBtn');
+  hiddenBasket.style.display = 'block';
+  closeBtn.style.display = 'block';
+}
+
+
+function closeMenu(){
+  let hiddenBasket = document.getElementById('shoppingCart');
+  let closeBtn = document.getElementById('closeBtn');
+  hiddenBasket.style.display = 'none';
+  closeBtn.style.display = 'none';
+}

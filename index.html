@@ -101,7 +101,7 @@
     </div>
 
     <div class="basket" id="shoppingCart">
-        <div class="basket-header"><h4>Warenkorb</h4></div> 
+        <div class="basket-header"><h4>Warenkorb</h4><img class="closeBasketBtn" id="closeBtn" onclick="closeMenu()" src="./img/icons/circle-xmark-regular.svg"></div> 
         <div class="basket-items" id="basket">
         </div>
 
@@ -123,11 +123,18 @@
         </div>
 
         <button class="order-btn" id="order-btn" onclick="order()">Bestellen</button>
-
     </div>
-   
-
 </main>
+
+<img class="open-basket-btn" src="./img/icons/orange-basket.svg" onclick="showBasket()">
+
+<footer>
+    <div class="header-logo">
+        <img class="header-icon" src="./img/icons/house-solid.svg">
+        <h2>Lieferando.de</h2>
+    </div>
+    
+</footer>
 
 </body>
 </html>
