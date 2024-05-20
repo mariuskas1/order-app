@@ -11,6 +11,30 @@ header{
     padding: 16px;
 }
 
+footer{
+    background-color: rgb(255, 136, 0);
+    display: flex;
+}
+
+.open-basket-btn{
+    display: none;
+    width: 64px;
+    height: 64px;
+    background-color: white;
+    z-index: 10;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;    
+    transform: translateX(-50%);
+    border-radius: 50%;
+    padding: 12px;
+    border: 1px solid lightgray;
+}
+
+.open-basket-btn:hover{
+    cursor: pointer;
+}
+
 .header-logo{
     color: white;
     display: flex;
@@ -105,7 +129,18 @@ main{
     display: flex;
 }
 
+.closeBasketBtn{
+    display: none;
+    height: 56px;
+    width: 56px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
 
+.closeBasketBtn:hover{
+    cursor: pointer;
+}
 
 .resto-btn-div{
     border: 1px solid lightgray;
@@ -207,12 +242,10 @@ h4{
     display: flex;
     flex-direction: column;
     box-shadow: -1px 1px 17px 5px rgba(199, 199, 199, 0.5);
-    position: fixed;
-    right: 0;
-    top: 100px;
-    transition: all 100ms ease;
     background-color: white;
-    min-height: 100%;
+    max-height: 700px;
+    position: sticky;
+    top: 0;
 }
 
 .basket-items{
@@ -369,21 +402,22 @@ td{
 }
 
 
-
-
 @media(max-width: 800px){
-    main{
-        flex-direction: column;
+    .basket{
+        display: none;
+        position: absolute;
+        width: 100%;
+        z-index: 20;
+        max-height: initial;
+        height: 100%;
     }
     .card{
         width: 100%;
     }
-    .basket{
-        width: 100%;
-        position: initial;
-        right: initial;
-        top: initial;
-        transition: all 100ms ease;
-        min-height: initial;
+    .open-basket-btn{
+        display: block;
+    }
+    .order-btn{
+        width: 95%;
     }
 }
