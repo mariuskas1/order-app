@@ -2,6 +2,7 @@ let names = [];
 let prices = [];
 let amounts = [];
 
+load();
 
 function displayEmptyBasket(){
   let basket = document.getElementById("basket");
@@ -30,6 +31,7 @@ function addToBasket(name, price, amount) {
     
     displayShoppingBasket();
     updateShoppingSum();
+    save();
 }
 
 
@@ -92,6 +94,7 @@ function removeItem(i){
   document.getElementById("basket").innerHTML = '';
   displayShoppingBasket();
   updateShoppingSum();
+  save();
 }
 
 
@@ -106,6 +109,7 @@ function decreaseAmount(i){
     document.getElementById("basket").innerHTML = '';
     displayShoppingBasket();
     updateShoppingSum();
+    save();
   }
 }
 
@@ -118,6 +122,7 @@ function increaseAmount(i){
   document.getElementById("basket").innerHTML = '';
   displayShoppingBasket();
   updateShoppingSum();
+  save();
 }
 
 
@@ -130,8 +135,10 @@ function order(){
     prices = [];
     amounts = [];
     displayEmptyBasket();
+    save();
   }
 }
+
 
 function showBasket(){
   let hiddenBasket = document.getElementById('shoppingCart');
@@ -146,4 +153,28 @@ function closeMenu(){
   let closeBtn = document.getElementById('closeBtn');
   hiddenBasket.style.display = 'none';
   closeBtn.style.display = 'none';
+}
+
+
+function save(){
+  let namesText = JSON.stringify(names);
+  let pricesText = JSON.stringify(prices);
+  let amountsText = JSON.stringify(amounts);
+
+  localStorage.setItem('names', namesText);
+  localStorage.setItem('prices', pricesText);
+  localStorage.setItem('amounts', amountsText);
+}
+
+
+function load(){
+  let namesText = localStorage.getItem('names');
+  let pricesText = localStorage.getItem('prices');
+  let amountsText = localStorage.getItem('amounts');
+
+  if(namesText && pricesText && amountsText){
+    names = JSON.parse(namesText);
+    prices = JSON.parse(pricesText);
+    amounts = JSON.parse(amountsText);
+  }
 }
