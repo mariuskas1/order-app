@@ -83,6 +83,9 @@ function updateShoppingSum() {
   let finalSum = sum + 1;
   document.getElementById("sum").innerHTML = sum.toFixed(2);
   document.getElementById("finalSum").innerHTML = finalSum.toFixed(2);
+
+  let sumDisplay = document.getElementById('sum-display');
+  sumDisplay.innerHTML = sum.toFixed(2);
 }
 
 
